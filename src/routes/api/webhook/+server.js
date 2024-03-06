@@ -1,6 +1,6 @@
 import {json} from "@sveltejs/kit";
 import {Resend} from "resend";
-import {supabase} from '../../../lib/supabaseClient.js'
+import {supabase} from '$lib/supabaseClient.ts'
 
 
 export const POST = async (event) => {

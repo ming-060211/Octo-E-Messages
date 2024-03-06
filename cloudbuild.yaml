@@ -1,0 +1,26 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'gcr.io/$PROJECT_ID/usermanagementapp',
+        '--build-arg=SUPABASE_URL_PARAM=${_SUPABASE_URL_PARAM}',
+        '--build-arg=SUPABASE_ANON_KEY_PARAM=${_SUPABASE_ANON_KEY_PARAM}',
+        '--build-arg=CRYPTER_KEY_PARAM=${_CRYPTER_KEY_PARAM}',
+        '--build-arg=PUBLIC_SUPABASE_URL_PARAM=${_PUBLIC_SUPABASE_URL_PARAM}',
+        '--build-arg=PUBLIC_SUPABASE_ANON_KEY_PARAM=${_PUBLIC_SUPABASE_ANON_KEY_PARAM}',
+        '.'
+      ]
+  # push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/usermanagementapp']
+images:
+  - 'gcr.io/$PROJECT_ID/usermanagementapp'
+timeout: 1200s
+substitutions:
+  _SUPABASE_URL_PARAM: missing
+  _SUPABASE_ANON_KEY_PARAM: missing
+  _CRYPTER_KEY_PARAM: missing
+  _PUBLIC_SUPABASE_URL_PARAM: missing
+  _PUBLIC_SUPABASE_ANON_KEY_PARAM: missing
