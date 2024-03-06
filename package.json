@@ -1,0 +1,36 @@
+{
+	"name": "resendtest",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "prettier --check .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@skeletonlabs/skeleton": "^2.8.0",
+		"@skeletonlabs/tw-plugin": "^0.3.1",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@tailwindcss/forms": "^0.5.7",
+		"autoprefixer": "^10.4.17",
+		"postcss": "^8.4.35",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"svelte": "^4.2.7",
+		"sveltekit-flash-message": "^2.4.2",
+		"tailwindcss": "^3.4.1",
+		"vite": "^5.0.3"
+	},
+	"type": "module",
+	"dependencies": {
+		"@supabase/auth-helpers-sveltekit": "^0.12.0",
+		"@supabase/supabase-js": "^2.39.7",
+		"resend": "^3.2.0",
+		"svelte-french-toast": "^1.2.0",
+		"svelte-simple-modal": "^1.6.2"
+	}
+}
