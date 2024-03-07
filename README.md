@@ -2,6 +2,14 @@
 A web application for Managing user and listen to webhook from Octoprint which will send message to user by Emails
 This web application is made from Svelte, Supabase and Resend.
 
+### How to Use
+```bash
+git clone git@github.com:ming-060211/EmailResendManagementApp.git
+npm install
+npm run dev
+```
+it required .env ,which will include SupabaseURl and SupabaseAnonKey to access Supabase
+
 ### Home Page
 ----
 Home page user can interact with the page by clicking certain button
@@ -31,10 +39,4 @@ Home page user can interact with the page by clicking certain button
 ---
 ![Screenshot from 2024-03-07 14-31-59](https://github.com/ming-060211/EmailResendManagementApp/assets/156335979/d7c88260-9b78-4364-9059-67c39ac8b505)
 
-### How to Use
-```bash
-git clone git@github.com:ming-060211/EmailResendManagementApp.git
-npm install
-npm run dev
-```
-it required .env which include SupabaseURl and SupabaseAnonKey
+
