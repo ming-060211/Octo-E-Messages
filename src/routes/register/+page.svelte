@@ -1,12 +1,19 @@
 <script lang="ts">
-    import {updateFlash} from "sveltekit-flash-message";
+    import {getFlash, updateFlash} from "sveltekit-flash-message";
     import {page} from "$app/stores";
+    import toast, { Toaster } from 'svelte-french-toast';
+
+    const flash = getFlash(page);
 
     async function submitform(e : Event){
         const form = e.target as HTMLFormElement
         const body = new FormData(e.target as HTMLFormElement)
 
-        await fetch(form.action, { method: 'POST', body})
+        let res = await fetch(form.action, { method: 'POST', body })
+
+        // let result = await res.json()
+        // let split = result.data.replace(/^\["(.+)"\]$/, '$1')
+        // toast(split)
         form.reset()
         await updateFlash(page)
 

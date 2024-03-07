@@ -1,7 +1,8 @@
 import type {Actions} from "@sveltejs/kit";
 import {fail} from "@sveltejs/kit";
 import {AuthApiError} from "@supabase/supabase-js";
-import { redirect } from "sveltekit-flash-message/server"
+import {redirect, setFlash} from "sveltekit-flash-message/server"
+// import { error } from '@sveltejs/kit';
 
 export const load = async (event) => {//check if user exist no then go login / register
     const loggedInUser = await event.locals.getSession();
@@ -24,19 +25,23 @@ export const actions = {
         if (error) {
             console.log(error.message)
             if (error instanceof AuthApiError && error.status === 400) {
-                return fail(400, {
-                    error: 'Invalid credentials.',
-                    values: {
-                        email,
-                    },
-                })
+                // return fail(400, {
+                //     error: 'Invalid credentials.',
+                //     values: {
+                //         email,
+                //     },
+                // })
+                setFlash({type: "error", message: error.message}, cookies)
+                return fail(400)
             }
-            return fail(500, {
-                error: 'Server error. Try again later.',
-                values: {
-                    email,
-                },
-            })
+            // return fail(500, {
+            //     error: 'Server error. Try again later.',
+            //     values: {
+            //         email,
+            //     },
+            // })
+            setFlash({type: "error", message: error.message}, cookies)
+            return fail(400)
         }
 
         throw redirect( '/', {type: "success", message: "Welcome"}, cookies)
