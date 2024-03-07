@@ -1,8 +1,12 @@
 <script lang="ts">
     import {enhance} from "$app/forms";
-    import {updateFlash} from "sveltekit-flash-message";
+    import {getFlash, updateFlash} from "sveltekit-flash-message";
     import {page} from "$app/stores";
+    import toast from "svelte-french-toast";
     export let data
+
+    const flash = getFlash(page);
+
 
 
 </script>
@@ -17,7 +21,7 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form method="POST" action="?/login" class="space-y-6" use:enhance>
+        <form method="post" action="?/login" class="space-y-6" use:enhance>
             <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">

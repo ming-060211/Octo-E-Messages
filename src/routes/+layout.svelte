@@ -16,6 +16,18 @@
     import DeleteForm from "../lib/modals/DeleteForm.svelte";
 
     initializeStores();
+    const flash = getFlash(page)
+    const toastStore = getToastStore()
+
+    $: if ($flash){
+        const t : ToastSettings ={
+            message: $flash.message,
+            background: 'bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 text-white',
+            classes: 'border-4'
+        }
+        toastStore.trigger(t)
+        $flash = undefined
+    }
 
     const modalRegistry: Record<string, ModalComponent> = {
         addnewcom: {ref: AddNewForm},
@@ -62,6 +74,7 @@
 </script>
 
 <Toaster />
+<Toast />
 <Modal components={modalRegistry}/>
 <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
     <a class="text-3xl font-bold leading-none" href="#">
