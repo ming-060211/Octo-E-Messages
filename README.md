@@ -4,7 +4,7 @@ This web application is made from Svelte, Supabase and Resend.
 
 ### How to Use
 ```bash
-git clone git@github.com:ming-060211/EmailResendManagementApp.git
+git clone https://github.com/ming-060211/EmailResendManagementApp.git
 npm install
 npm run dev
 ```
