@@ -33,13 +33,6 @@
         modalStore.trigger(modal)
     }
 
-    // async function getuser(){
-    //     const response = await fetch('/api/loaduser')
-    //     console.log(response)
-    // }
-    //
-    // getuser()
-
     onMount(async () => {
         let response = await fetch('/api/loaduser')
         let result = await response.json()
@@ -48,6 +41,13 @@
             console.log(result[i])
         }
     })
+
+    // async function getuser(){
+    //     const response = await fetch('/api/loaduser')
+    //     console.log(response)
+    // }
+    //
+    // getuser()
     export let data
 
     $: user = data.user
