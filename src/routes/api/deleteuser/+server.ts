@@ -1,4 +1,4 @@
-import {supabase} from '../../../lib/supabaseClient.js'
+import {supabase} from '$lib/supabaseClient.js'
 import {json} from "@sveltejs/kit";
 
 export const POST = async ({request}) => {
