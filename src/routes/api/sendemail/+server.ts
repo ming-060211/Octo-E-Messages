@@ -1,7 +1,8 @@
 import { json } from '@sveltejs/kit';
 import {Resend} from "resend";
+import {env} from "$env/dynamic/private"
 
-const resend = new Resend('re_XKB85KAL_LsZ5CCvWaEfvpC77ARey1ZT4')
+const resend = new Resend(env.RESEND_KEY)
 
 export const POST = async ({ request }) => {
     const { getvalue, setemail } = await request.json()
