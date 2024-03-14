@@ -1,13 +1,14 @@
 import {json} from "@sveltejs/kit";
 import {Resend} from "resend";
 import {supabase} from '$lib/supabaseClient.ts'
+import {env} from '$env/dynamic/private'
 
 
 export const POST = async (event) => {
     const formData = await event.request.formData()
     let message = formData.get('message')
 
-    const resend = new Resend('re_XKB85KAL_LsZ5CCvWaEfvpC77ARey1ZT4')
+    const resend = new Resend(env.RESEND_KEY)
 
     const { data: suparesult } = await supabase.from('userdb').select('email').eq('enable_email', true);
     for (let i = 0; i < suparesult.length; i++) {
