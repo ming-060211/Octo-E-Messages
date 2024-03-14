@@ -42,12 +42,6 @@
         }
     })
 
-    // async function getuser(){
-    //     const response = await fetch('/api/loaduser')
-    //     console.log(response)
-    // }
-    //
-    // getuser()
     export let data
 
     $: user = data.user

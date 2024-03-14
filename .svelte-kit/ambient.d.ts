@@ -29,6 +29,7 @@ declare module '$env/static/private' {
 	export const SUPABASE_URL: string;
 	export const SUPABASE_ANON_KEY: string;
 	export const CRYPTER_KEY: string;
+	export const RESEND_KEY: string;
 	export const TERM_SESSION_ID: string;
 	export const LESSOPEN: string;
 	export const LANGUAGE: string;
@@ -142,6 +143,7 @@ declare module '$env/dynamic/private' {
 		SUPABASE_URL: string;
 		SUPABASE_ANON_KEY: string;
 		CRYPTER_KEY: string;
+		RESEND_KEY: string;
 		TERM_SESSION_ID: string;
 		LESSOPEN: string;
 		LANGUAGE: string;
