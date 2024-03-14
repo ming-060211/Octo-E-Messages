@@ -33,14 +33,14 @@
         modalStore.trigger(modal)
     }
 
-    onMount(async () => {
-        let response = await fetch('/api/loaduser')
-        let result = await response.json()
-        // console.log(result[0].first_name)
-        for(let i=0 ; i<result.length ;i++){
-            console.log(result[i])
-        }
-    })
+    // onMount(async () => {
+    //     let response = await fetch('/api/loaduser')
+    //     let result = await response.json()
+    //     // console.log(result[0].first_name)
+    //     for(let i=0 ; i<result.length ;i++){
+    //         console.log(result[i])
+    //     }
+    // })
 
     export let data
 
