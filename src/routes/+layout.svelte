@@ -14,6 +14,7 @@
     import {Toaster} from "svelte-french-toast";
     import EditForm from "../lib/modals/EditForm.svelte";
     import DeleteForm from "../lib/modals/DeleteForm.svelte";
+    import GenerateApiKey from "$lib/modals/GenerateApiKey.svelte";
 
     initializeStores();
     const flash = getFlash(page)
@@ -33,7 +34,8 @@
         addnewcom: {ref: AddNewForm},
         SendMsg: {ref: SendMsg},
         updatefrom: { ref: EditForm},
-        deleteform: { ref : DeleteForm}
+        deleteform: { ref : DeleteForm},
+        GenerateApiKey: { ref : GenerateApiKey}
     }
 
     const modalStore = getModalStore();
@@ -42,6 +44,14 @@
         const modal: ModalSettings = {
             type: 'component',
             component: 'addnewcom'
+        }
+        modalStore.trigger(modal)
+    }
+
+    function getgenerateapikeymodal(){
+        const modal: ModalSettings = {
+            type: 'component',
+            component: 'GenerateApiKey'
         }
         modalStore.trigger(modal)
     }
@@ -95,13 +105,20 @@
             </svg>
         </li>
             <li><button class="text-sm text-blue-600 font-bold" on:click={() => getmodaladdnewuser()}>Add New User</button></li>
-        {/if}
         <li class="text-gray-300">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
             </svg>
         </li>
-        <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Services</a></li>
+            <li><button class="text-sm text-gray-400 hover:text-gray-500" on:click={() => getgenerateapikeymodal()} >Generate API Key</button></li>
+
+        {/if}
+<!--        <li class="text-gray-300">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">-->
+<!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />-->
+<!--            </svg>-->
+<!--        </li>-->
+<!--        <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Services</a></li>-->
     </ul>
     {#if !data.session}
         <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="/login">Sign In</a>

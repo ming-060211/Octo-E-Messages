@@ -24,7 +24,7 @@ Octo-E-Messages is an web app that makes it easy to get email and text alerts fr
 You’ll need
 * Git
 * Node 18 & npm
-* Google cloud account with billing 
+* Google cloud account with billing
 * Supabase account
 * Resend account with billing
 * Octoprint instance attached to 3D printer
@@ -91,7 +91,7 @@ RESEND=<resend_key>
 <p align="justify">
 After setting up the .env file it can run the deployment. The project contains a bash script to perform deployment once gcloud is installed and setup. To deploy run run_deployment.sh to execute it
 
-If successfully deployed, try adding a new user into the web application and to see if it successfully added. If it adds, try going to Octoprint to send text messages to the web application. To do this, go to Octoprint> Settings> Webhook> Send Test Webhook. If it is successful the user will receive an email with a message from the 3D printer. 
+If successfully deployed, try adding a new user into the web application and to see if it successfully added. If it adds, try going to Octoprint to send text messages to the web application. To do this, go to Octoprint> Settings> Webhook> Send Test Webhook. If it is successful the user will receive an email with a message from the 3D printer.
 </p>
 
 ## Local hosting
@@ -108,6 +108,7 @@ Clear Setup for Octoprint Here - https://www.youtube.com/watch?v=E3kHsxSkBAw
 
 * Register Account
 * Add New User and Activate Email
+* Generate Api Key in web app
 * Add Website link to Octoprint and Add Generated Key into Webhooks Octoprint
 * Trigger Test event in Webhooks Octoprint
 * Check email if the message arrives
@@ -123,10 +124,3 @@ Clear Setup for Octoprint Here - https://www.youtube.com/watch?v=E3kHsxSkBAw
 <p align="justify">
   I have used Sveltekit and Tailwind CSS for the main technologies. Sveltekit is a JavaScript framework and Tailwind CSS is for designing the UI for user interaction with the Web Application. Octoprint is to send messages to the Web Application and Resend will forward the message to the mailing list that is selected to be delivered to. Supabase is for setting up the database to run the Web Application and the Authentication Secure the application.
 </p>
-
-
-
-
-
-
-
