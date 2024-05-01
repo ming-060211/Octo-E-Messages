@@ -122,5 +122,5 @@ Clear Setup for Octoprint Here - https://www.youtube.com/watch?v=E3kHsxSkBAw
 ![Static Badge](https://img.shields.io/badge/GoogleCloud-white?logo=GoogleCloud)
 
 <p align="justify">
-  I have used Sveltekit and Tailwind CSS for the main technologies. Sveltekit is a JavaScript framework and Tailwind CSS is for designing the UI for user interaction with the Web Application. Octoprint is to send messages to the Web Application and Resend will forward the message to the mailing list that is selected to be delivered to. Supabase is for setting up the database to run the Web Application and the Authentication Secure the application.
+  I have used Sveltekit and Tailwind CSS for the main technologies. Sveltekit is a JavaScript framework and Tailwind CSS is for designing the UI for user interaction with the Web Application. Octoprint is to send messages to the Web Application and Resend will forward the message to the mailing list that is selected to be delivered to. Supabase is for setting up the database to run the Web Application and the Authentication Secure the application.  
 </p>
